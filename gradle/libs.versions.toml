@@ -9,6 +9,7 @@ appcompat = "1.6.1"
 material = "1.10.0"
 constraintlayout = "2.1.4"
 shadowhook = "1.0.10"
+syshook = "1.1-SNAPSHOT"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -19,6 +20,7 @@ androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
 shadowhook = { group = "com.bytedance.android", name = "shadowhook", version.ref = "shadowhook" }
+syshook = { group = "com.github.HuolalaTech", name = "hll-sys-hook-android", version.ref = "syshook" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

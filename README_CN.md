@@ -1,6 +1,6 @@
 # HuoLaLa unify hook lib
 
-[![license](https://img.shields.io/hexpm/l/plug.svg)](https://www.apache.org/licenses/LICENSE-2.0) ![release](https://img.shields.io/badge/release-v1.0.0-green.svg)
+[![license](https://img.shields.io/hexpm/l/plug.svg)](https://www.apache.org/licenses/LICENSE-2.0) ![release](https://img.shields.io/badge/release-v1.0-green.svg)
 
 货拉拉 与 Lalamove Android 项目采用`inline-hook`技术来解决系统级问题以提高系统稳定性与性能问题。
 
