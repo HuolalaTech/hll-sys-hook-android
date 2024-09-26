@@ -44,6 +44,6 @@ dependencies {
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
     implementation(libs.androidx.constraintlayout)
-    // implementation(libs.syshook)
-    implementation(project(":lib_thread_shield"))
+    implementation(libs.syshook)
+    //  implementation(project(":lib_thread_shield"))
 }
