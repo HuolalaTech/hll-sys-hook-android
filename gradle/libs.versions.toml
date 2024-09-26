@@ -9,7 +9,7 @@ appcompat = "1.6.1"
 material = "1.10.0"
 constraintlayout = "2.1.4"
 shadowhook = "1.0.10"
-syshook = "1.0-SNAPSHOT"
+syshook = "1.1-SNAPSHOT"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
