@@ -34,3 +34,45 @@ SuspendThreadSafeHelper.getInstance()
 在货拉拉国际版业务中, 由于存在一部分低端设备，线程挂起超时导致的崩溃次数较多，修复后收益明显。
 
 ![suspend_thread_timeout_trend.png](img/suspend_thread_timeout_trend.png)
+
+
+#### 使用方式
+
+##### 1. 添加依赖
+
+```setting.gradle.kts
+
+    dependencyResolutionManagement {
+        repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+        repositories {
+            google()
+            mavenCentral()
+            maven { url = uri("https://jitpack.io") }
+        }
+    }
+
+```
+
+```build.gradle.kts
+
+    dependencies {
+	    implementation 'com.github.HuolalaTech:hll-sys-hook-android:1.4-SNAPSHOT'
+    }
+
+```
+##### 2. 初始化代码
+
+```kotlin
+
+    SuspendThreadSafeHelper.getInstance()
+            .suspendThreadSafe(object : SuspendThreadSafeHelper.SuspendThreadCallback {
+                override fun suspendThreadTimeout(waitTime: Double) {
+                    Log.i("TAG", "Waitting for thread suspend done, spend : $waitTime s")
+                }
+
+                override fun onError(errorMsg: String) {
+                    Log.e("TAG", "onError: $errorMsg")
+                }
+            })
+
+```
