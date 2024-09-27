@@ -20,7 +20,7 @@ Java_cn_huolala_threadshield_SuspendThreadSafeHelper_nativeSuspendThreadSafe(JNI
         // android [15 , +∞)
         using namespace suspend_thread_safe_v15;
         suspendThreadSafe(env, callback);
-    } else if (apiLevel >= __ANDROID_API_R__) {
+    } else if (apiLevel > __ANDROID_API_R__) {
         using namespace suspend_thread_timeout_apex_upgrade_logic_checker;
         if (checkApexUpgradeToAndroid15Logic()) {
             using namespace suspend_thread_safe_v15;
