@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
+    `maven-publish`
 }
 
 android {
@@ -13,7 +14,6 @@ android {
 
     defaultConfig {
         minSdk = 21
-
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
         externalNativeBuild {
@@ -47,14 +47,42 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
     kotlinOptions {
-        jvmTarget = "11"
+        jvmTarget = "17"
     }
 }
 
 dependencies {
     implementation(libs.shadowhook)
+}
+
+publishing {
+    publications {
+        create<MavenPublication>("release") {
+            groupId = "com.github.HuolalaTech"
+            artifactId = "hll-sys-hook-android"
+            version = "1.4-SNAPSHOT"
+
+            afterEvaluate {
+                val pubComponent = components.findByName("release")
+                if (pubComponent != null) {
+                    from(pubComponent)
+                }
+            }
+        }
+    }
+
+    repositories {
+        maven {
+            name = "jitpack"
+            url = uri("https://jitpack.io")
+        }
+    }
+}
+
+tasks.named("publishToMavenLocal") {
+    dependsOn("assembleRelease")
 }

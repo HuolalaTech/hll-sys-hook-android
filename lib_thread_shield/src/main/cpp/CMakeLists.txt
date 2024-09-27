@@ -32,6 +32,7 @@ add_library(${CMAKE_PROJECT_NAME} SHARED
         suspend_thread_timeout_v5_11.cpp
         suspend_thread_timeout_v12_14.cpp
         suspend_thread_timeout_v15.cpp
+        suspend_thread_timeout_apex_upgrade_logic_checker.cpp
         )
 
 find_package(shadowhook REQUIRED CONFIG)
